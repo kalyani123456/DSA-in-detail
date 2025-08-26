@@ -1,0 +1,36 @@
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+
+    Set<Integer> set = new HashSet<>();
+    set.add(2);
+    set.add(1);
+    set.add(-1);
+    set.add(3);
+    set.add(2);
+    set.add(-2);
+    set.add(3);
+    set.add(-1);
+
+    System.out.println("Print Set : "+set);
+  
+  }
+}
+
+Space complexity : O(n)
+
+Output :
+HashSet :
+Order can be anything but gives only 1 entry
+Print Set : [-1, 1, -2, 2, 3]
+Time complexity : O(log n) - worst case
+
+LinkedHashSet : 
+Preserves insertion order
+Print Set : [2, 1, -1, 3, -2]
+Time complexity : O(log n) - worst case
+
+TreeSet : 
+Sorted order
+Print Set : [-2, -1, 1, 2, 3]
+Time complexity : O(log n) - worst case
