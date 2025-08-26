@@ -19,8 +19,10 @@ class Main {
   }
 }
 
+Space complexity : O(n)
+
 Output : 
-HashMap : 
+HashMap : O(log n) - worst case
 HashMap → iteration order is unspecified (it might look sorted sometimes, but that’s accidental—don’t rely on it).
 key--1 and value--1 updated
 key-1 and value-one
@@ -28,7 +30,7 @@ key--2 and value-two -up
 key-2 and value-two up
 key-3 and value-three up
 
-LinkedHashMap : 
+LinkedHashMap : O(log n) - worst case
 Map<Integer,String> map = new LinkedHashMap<>();
 Insert order will be preserved
 key-2 and value-two up
@@ -37,7 +39,8 @@ key--1 and value--1 updated
 key-3 and value-three up
 key--2 and value-two -up
 
-TreeMap :
+TreeMap : O(log n) - worst case
+
 List will be sorted by key by default
 key--2 and value-two -up
 key--1 and value--1 updated
