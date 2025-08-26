@@ -1,0 +1,60 @@
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+
+    Map<Integer,String> map = new HashMap<>();
+    map.put(2,"two");
+    map.put(1,"one");
+    map.put(-1,"-1");
+    map.put(3,"three");
+    map.put(2,"two up");
+    map.put(-2,"two -up");
+     map.put(3,"three up");
+      map.put(-1,"-1 updated");
+
+
+    for(Map.Entry<Integer,String> m : map.entrySet()){
+    System.out.println("key-"+m.getKey()+" and value-"+m.getValue());
+    }
+  }
+}
+
+Output : 
+HashMap : 
+HashMap → iteration order is unspecified (it might look sorted sometimes, but that’s accidental—don’t rely on it).
+key--1 and value--1 updated
+key-1 and value-one
+key--2 and value-two -up
+key-2 and value-two up
+key-3 and value-three up
+
+LinkedHashMap : 
+Map<Integer,String> map = new LinkedHashMap<>();
+Insert order will be preserved
+key-2 and value-two up
+key-1 and value-one
+key--1 and value--1 updated
+key-3 and value-three up
+key--2 and value-two -up
+
+TreeMap :
+List will be sorted by key by default
+key--2 and value-two -up
+key--1 and value--1 updated
+key-1 and value-one
+key-2 and value-two up
+key-3 and value-three up
+
+
+How to sort by values : 
+Custom comparator
+
+Map<String, Integer> map = new TreeMap<>(Comparator.reverseOrder());
+map.put("b", 2);
+map.put("a", 1);
+map.put("c", 3);
+
+System.out.println(map);
+// Output: {c=3, b=2, a=1} (sorted by key in reverse order)
+
+
